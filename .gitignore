@@ -1,0 +1,40 @@
+# CCS / Eclipse
+*.metadata/
+*.launches
+*.project
+*.cproject
+*.settings/
+*.ccsproject
+*.ccxml
+*.gel
+Debug/
+Release/
+*.map
+*.lst
+*.obj
+*.out
+*.hex
+*.bin
+
+# TI-RTOS generated
+*.rov.xs
+*.xdc
+*.rov
+*.cfg.xs
+*.rov.cfg
+*.xdcproj
+
+# Sensor Controller
+*.sc*
+*.iov
+*.scc
+*.sco
+*.sld
+
+# Build folders (we keep them in repo for CI artifacts)
+!/firmware/build/**
+
+# SDK – only commit the exact version
+sdk/*
+!sdk/cc13x0_sdk_*/
+!sdk/cc13x2_sdk_5.20/
