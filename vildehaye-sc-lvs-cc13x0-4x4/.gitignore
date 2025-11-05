@@ -1,0 +1,61 @@
+######################################################
+# Sensor Controller Studio + Code Composer Studio
+# (pure SCS project – no main CPU application)
+######################################################
+
+# CCS / Eclipse metadata (created when you import the folder)
+.metadata/
+.settings/
+*.launch
+*.launchpad
+*.ccs
+*.cdtproject
+*.cdtbuild
+
+# Sensor Controller Studio generated files
+# These are rebuilt every time you click “Generate”
+scif.c
+scif.h
+scif_*.c
+scif_*.h
+scif_doxyfile
+scif_how_to_use.html
+scif_framework.c
+scif_framework.h
+scif_run_doxygen.bat
+*.auximg
+
+# Generated driver folder (when you point SCS to a sub-folder)
+scif/
+
+# Build artefacts
+Debug/
+Release/
+*.out
+*.map
+*.lst
+*.obj
+*.o
+*.d
+*.hex
+*.bin
+
+# CCS temporary / cache files
+*.tmp
+*.bak
+*.log
+*.xdc*
+*.xs
+*.rov
+*.gel
+*.ccxml
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Optional: ignore the whole generated driver folder used by examples
+# (uncomment if your SCS output goes into a folder named like this)
+# sensor_cc1352r1lp/
+# sensor_cc2650/
