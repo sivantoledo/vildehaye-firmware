@@ -33,6 +33,7 @@ Release/
 *.cfg.xs
 *.rov.cfg
 *.xdcproj
+targetConfigs/
 
 # Build folders (we keep them in repo for CI artifacts)
 !/firmware/build/**
