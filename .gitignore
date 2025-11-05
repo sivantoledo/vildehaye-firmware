@@ -34,13 +34,6 @@ Release/
 *.rov.cfg
 *.xdcproj
 
-# Sensor Controller
-*.sc*
-*.iov
-*.scc
-*.sco
-*.sld
-
 # Build folders (we keep them in repo for CI artifacts)
 !/firmware/build/**
 
