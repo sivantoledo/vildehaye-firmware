@@ -1,20 +1,30 @@
+# CCS / Eclipse files to KEEP
+# *.project
+# *.cproject
+# *.ccsproject
+
 # CCS / Eclipse
-*.metadata/
-*.launches
-*.project
-*.cproject
-*.settings/
-*.ccsproject
-*.ccxml
-*.gel
 Debug/
 Release/
+*.metadata/
+*.settings/
+*.launches
+*.ccxml
+*.gel
+.remote-sync.json
+*.launch
+*.ini
+*.log
 *.map
 *.lst
 *.obj
 *.out
 *.hex
 *.bin
+*.d
+*.o
+*.a
+*.lib
 
 # TI-RTOS generated
 *.rov.xs
@@ -34,7 +44,7 @@ Release/
 # Build folders (we keep them in repo for CI artifacts)
 !/firmware/build/**
 
-# SDK – only commit the exact version
+# SDK only commit the exact version
 sdk/*
 !sdk/cc13x0_sdk_*/
 !sdk/cc13x2_sdk_5.20/
