@@ -1,0 +1,176 @@
+#ifndef BOARD_CC1352P_LAUNCHPAD_H
+#define BOARD_CC1352P_LAUNCHPAD_H
+
+#include <ti/devices/cc13x2_cc26x2/driverlib/ioc.h>
+
+#define NC PIN_UNASSIGNED
+
+/*
+ *  CC1352 launchpads have a different pinout than CC1350 launchpads.
+ *
+ *  Pins 28, 29, 30 control the RF switch.
+ *
+ */
+
+//#include <ti/drivers/PIN.h>
+
+/*
+ * Definition of the Lauchpad's boosterpack pinout
+ */
+
+#define BOOSTERPACK_J1_1      VDDS
+#define BOOSTERPACK_J1_3      IOID_23
+#define BOOSTERPACK_J1_5      IOID_12
+#define BOOSTERPACK_J1_7      IOID_13
+#define BOOSTERPACK_J1_9      IOID_22
+#define BOOSTERPACK_J1_11     IOID_24
+#define BOOSTERPACK_J1_13     IOID_10
+#define BOOSTERPACK_J1_15     NC
+#define BOOSTERPACK_J1_17     IOID_21
+#define BOOSTERPACK_J1_19     IOID_5
+
+#define BOOSTERPACK_J1_2      VUSB
+#define BOOSTERPACK_J1_4      GND
+#define BOOSTERPACK_J1_6      IOID_25
+#define BOOSTERPACK_J1_8      IOID_26
+#define BOOSTERPACK_J1_10     IOID_27
+#define BOOSTERPACK_J1_12     IOID_28
+#define BOOSTERPACK_J1_14     IOID_29
+#define BOOSTERPACK_J1_16     IOID_30
+#define BOOSTERPACK_J1_18     NC
+#define BOOSTERPACK_J1_20     NC
+
+#define BOOSTERPACK_J2_1      IOID_7
+#define BOOSTERPACK_J2_3      IOID_6
+#define BOOSTERPACK_J2_5      IOID_20
+#define BOOSTERPACK_J2_7      NC
+#define BOOSTERPACK_J2_9      IOID_18
+#define BOOSTERPACK_J2_11     BOOSTERPACK_RESET
+#define BOOSTERPACK_J2_13     JTAG_TMS
+#define BOOSTERPACK_J2_15     JTAG_TCK
+#define BOOSTERPACK_J2_17     IOID_16
+#define BOOSTERPACK_J2_19     IOID_17
+
+#define BOOSTERPACK_J2_2      GND
+#define BOOSTERPACK_J2_4      IOID_19
+#define BOOSTERPACK_J2_6      IOID_11
+#define BOOSTERPACK_J2_8      NC
+#define BOOSTERPACK_J2_10     LAUNCHPAD_RESET
+#define BOOSTERPACK_J2_12     IOID_9
+#define BOOSTERPACK_J2_14     IOID_8
+#define BOOSTERPACK_J2_16     IOID_15
+#define BOOSTERPACK_J2_18     IOID_14
+#define BOOSTERPACK_J2_20     NC
+
+/*
+ * Definition of the Lauchpad's devices
+ */
+
+#define LAUNCHPAD_RED_LED         IOID_6
+#define LAUNCHPAD_GREEN_LED       IOID_7
+#define LAUNCHPAD_BTN1            IOID_15
+#define LAUNCHPAD_BTN2            IOID_14
+//#define RF_SWITCH       IOID_1
+//#define RF_SWITCH_POWER IOID_30
+#define LAUNCHPAD_UART_TX         IOID_13
+#define LAUNCHPAD_UART_RX         IOID_12
+#define LAUNCHPAD_FLASH_CS        IOID_20 /* We normlaly do not use the on-board flash */
+#define LAUNCHPAD_FLASH_SCLK      IOID_10
+#define LAUNCHPAD_FLASH_MISO      IOID_8
+#define LAUNCHPAD_FLASH_MOSI      IOID_9
+
+//#define RF_SWITCH_SUB1GHZ 1
+//#define RF_SWITCH_2_4GHZ  0
+
+#define LAUNCHPAD_BTN1_PRESSED    0
+#define LAUNCHPAD_BTN2_PRESSED    0
+
+#define LAUNCHPAD_RED_LED_ON  1
+#define LAUNCHPAD_RED_LED_OFF 0
+
+#define LAUNCHPAD_GREEN_LED_ON  1
+#define LAUNCHPAD_GREEN_LED_OFF 0
+
+#define BOARD_BUTTON0         LAUNCHPAD_BTN1
+#define BOARD_BUTTON0_PRESSED LAUNCHPAD_BTN1_PRESSED
+#define BOARD_BUTTON1         LAUNCHPAD_BTN2
+#define BOARD_BUTTON1_PRESSED LAUNCHPAD_BTN2_PRESSED
+
+#define BOARD_BOOTLOADER_BACKDOOR  LAUNCHPAD_BTN1
+
+#define RF_SWITCH_0       IOID_28
+#define RF_SWITCH_1       IOID_29
+#define RF_SWITCH_2       IOID_30
+
+//#if defined(LAUNCHXL_CC1352P_2) || defined(LAUNCHXL_CC1352P_4)
+//  1: 2.4     is always no PA (DIO28) and 915/868 is either with PA (DIO29) or no PA (DIO30).
+// -2: 868/915 is always no PA (DIO30) and 2.4     is either with PA (DIO29) or no PA (DIO28).
+// -4: 433     is always no PA (DIO30) and 2.4     is either with PA (DIO29) or no PA (DIO28).
+
+#if defined(LAUNCHXL_CC1352P_2) || defined(LAUNCHXL_CC1352P_4)
+#define RF_SWITCHES_DEFINED
+#define RF_SWITCH_0_INITIAL PIN_GPIO_LOW
+#define RF_SWITCH_1_INITIAL PIN_GPIO_LOW
+#define RF_SWITCH_2_INITIAL PIN_GPIO_HIGH
+
+#define RF_SWITCH_0_SUB1GHZ_TX 0
+#define RF_SWITCH_1_SUB1GHZ_TX 0
+#define RF_SWITCH_2_SUB1GHZ_TX 1
+
+#define RF_SWITCH_0_SUB1GHZ_RX 0
+#define RF_SWITCH_1_SUB1GHZ_RX 0
+#define RF_SWITCH_2_SUB1GHZ_RX 1
+
+#define RF_SWITCH_0_SUB1GHZ_TX_PA 0
+#define RF_SWITCH_1_SUB1GHZ_TX_PA 0
+#define RF_SWITCH_2_SUB1GHZ_TX_PA 1
+
+#define RF_SWITCH_0_2_4GHZ_RX 1
+#define RF_SWITCH_1_2_4GHZ_RX 0
+#define RF_SWITCH_2_2_4GHZ_RX 0
+
+#define RF_SWITCH_0_2_4GHZ_TX 1
+#define RF_SWITCH_1_2_4GHZ_TX 0
+#define RF_SWITCH_2_2_4GHZ_TX 0
+
+#define RF_SWITCH_0_2_4GHZ_TX_PA 0
+#define RF_SWITCH_1_2_4GHZ_TX_PA 1
+#define RF_SWITCH_2_2_4GHZ_TX_PA 0
+#endif
+
+#if defined(LAUNCHXL_CC1352P_1) || defined(LAUNCHXL_CC1352P1)
+#define RF_SWITCHES_DEFINED
+#define RF_SWITCH_0_INITIAL PIN_GPIO_LOW
+#define RF_SWITCH_1_INITIAL PIN_GPIO_LOW
+#define RF_SWITCH_2_INITIAL PIN_GPIO_HIGH
+
+#define RF_SWITCH_0_SUB1GHZ_TX 0
+#define RF_SWITCH_1_SUB1GHZ_TX 0
+#define RF_SWITCH_2_SUB1GHZ_TX 1
+
+#define RF_SWITCH_0_SUB1GHZ_RX 0
+#define RF_SWITCH_1_SUB1GHZ_RX 0
+#define RF_SWITCH_2_SUB1GHZ_RX 1
+
+#define RF_SWITCH_0_SUB1GHZ_TX_PA 0
+#define RF_SWITCH_1_SUB1GHZ_TX_PA 1
+#define RF_SWITCH_2_SUB1GHZ_TX_PA 0
+
+#define RF_SWITCH_0_2_4GHZ_RX 1
+#define RF_SWITCH_1_2_4GHZ_RX 0
+#define RF_SWITCH_2_2_4GHZ_RX 0
+
+#define RF_SWITCH_0_2_4GHZ_TX 1
+#define RF_SWITCH_1_2_4GHZ_TX 0
+#define RF_SWITCH_2_2_4GHZ_TX 0
+
+#define RF_SWITCH_0_2_4GHZ_TX_PA 1
+#define RF_SWITCH_1_2_4GHZ_TX_PA 0
+#define RF_SWITCH_2_2_4GHZ_TX_PA 0
+#endif
+
+#ifndef RF_SWITCHES_DEFINED
+#error "MUST DEFINE LAUNCHPAD MODEL"
+#endif
+
+#endif /* BOARD_CC1352P_LAUNCHPAD_H */
