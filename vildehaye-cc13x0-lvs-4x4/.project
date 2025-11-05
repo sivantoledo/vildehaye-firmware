@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>vildehaye-tag-cc13x0-v2-6</name>
+	<name>vildehaye-cc13x0-lvs-4x4</name>
 	<comment></comment>
 	<projects>
 		<project>vildehaye-common-cc13x0</project>
@@ -29,12 +29,18 @@
 		<link>
 			<name>vildehaye-common</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/vildehaye-common</locationURI>
+			<locationURI>copy_PARENT/vildehaye-common</locationURI>
 		</link>
 		<link>
 			<name>vildehaye-sc-lvs-cc13x0-4x4</name>
 			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/vildehaye-sc-lvs-cc13x0-4x4</locationURI>
+			<locationURI>copy_PARENT/vildehaye-sc-lvs-cc13x0-4x4</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-3-PROJECT_LOC%7D/github/vildehaye-firmware</value>
+		</variable>
+	</variableList>
 </projectDescription>
