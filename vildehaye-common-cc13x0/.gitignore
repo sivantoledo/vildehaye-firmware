@@ -1,0 +1,32 @@
+# ===========================================================
+# TI-RTOS / SYS/BIOS Configuration Project .gitignore
+# ===========================================================
+
+# XDCtools-generated sources and packages
+src/
+configPkg/
+*.cfg.c
+*.cfg.h
+*.cfg.mak
+*.xdc.inc
+*.xdcenv.mak
+*.pjt
+
+# Build output folders
+Debug/
+Release/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Eclipse/CCS internal settings
+.settings/
+.metadata/
+*.launch
+
+# OS-specific cruft
+.DS_Store
+Thumbs.db
+desktop.ini
