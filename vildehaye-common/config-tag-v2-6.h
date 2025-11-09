@@ -5,6 +5,9 @@
 /* board definitions and mappings                                 */
 /********************************************************************/
 
+/* BUILD_CONFIG_ARCH cc13x0 */
+/* BUILD_CONFIG_SC lvs-4x4 */
+
 // test
 
 #include "../../vildehaye-common/board_vildehaye_v2_6.h"
