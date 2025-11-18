@@ -6,7 +6,7 @@
 /********************************************************************/
 
 /* BUILD_CONFIG_ARCH cc13x2 */
-/* BUILD_CONFIG_SC lvs-cc13x2-7x7 */
+/* BUILD_CONFIG_SC lvs-7x7 */
 
 #define LAUNCHXL_CC1352P1
 //#define LAUNCHXL_CC1352P_2
