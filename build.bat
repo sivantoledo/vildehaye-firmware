@@ -7,17 +7,11 @@ IF "%1"=="" (
   goto :usage
 )
 
-IF "%2"=="" (
-  goto :usage
-)
+set "CONFIG=%~1"
 
-set "FUNCTION=%~1"
-set "VARIANT=%~2"
+echo CONFIG: %CONFIG%
 
-echo FUNCTION: %FUNCTION%
-echo VARIANT: %VARIANT%
-
-set HEADER_FILE="vildehaye-common\config-%FUNCTION%-%VARIANT%.h"
+set HEADER_FILE="vildehaye-common\config-%CONFIG%.h"
 
 if not exist "%HEADER_FILE%" (
     echo ERROR: File not founded: %HEADER_FILE%
@@ -74,6 +68,6 @@ dir *.hex
 goto :eof
 
 :usage
-ECHO scripts\build FUNCTION VARIANT
-ECHO For example, scripts\build tag v2-6
+ECHO build CONFIG
+ECHO For example, build tag-v2-6
 
