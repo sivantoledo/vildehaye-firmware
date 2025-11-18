@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<project name="Low Voltage Suspender Hall Sensor" version="2.4.0.793">
+    <desc><![CDATA[]]></desc>
+    <pattr name="Apply default power mode">0</pattr>
+    <pattr name="Board">None</pattr>
+    <pattr name="Chip name">CC1310</pattr>
+    <pattr name="Chip package">QFN32 4x4 RSM</pattr>
+    <pattr name="Chip revision">-</pattr>
+    <pattr name="Clock in active mode">0</pattr>
+    <pattr name="Code prefix"></pattr>
+    <pattr name="Default power mode">0</pattr>
+    <pattr name="Operating system">TI-RTOS</pattr>
+    <pattr name="Output directory">.</pattr>
+    <pattr name="RTC tick interval (16.16 format)">2000</pattr>
+    <pattr name="Run-time logging UART RX pin"></pattr>
+    <pattr name="Run-time logging UART TX pin"></pattr>
+    <task name="Low Voltage Suspender">
+        <desc><![CDATA[]]></desc>
+        <tattr name="input.adcThreshold" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="input.policy" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="input.wait0" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="input.wait1" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="input.wait2" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="input.wait3" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.adc" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.compb" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.endVoltage" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.level" type="dec" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.startVoltage" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="output.state" type="dec" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="state.capConnected" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="state.endVoltage" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="state.hallInactive" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="state.level" type="dec" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="state.startVoltage" type="expr" content="struct" scope="task" min="0" max="65535">0</tattr>
+        <tattr name="state.state" type="dec" content="struct" scope="task" min="0" max="1">0</tattr>
+        <resource_ref name="ADC" enabled="1"/>
+        <resource_ref name="AON Domain Functionality" enabled="0"/>
+        <resource_ref name="Accumulator-Based Math" enabled="0"/>
+        <resource_ref name="Analog Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Analog Open-Source Pins" enabled="0"/>
+        <resource_ref name="Analog Pins" enabled="0"/>
+        <resource_ref name="COMPA" enabled="0"/>
+        <resource_ref name="COMPA Event Trigger" enabled="0"/>
+        <resource_ref name="COMPB" enabled="1"/>
+        <resource_ref name="COMPB Event Trigger" enabled="1"/>
+        <resource_ref name="Delay Insertion" enabled="0"/>
+        <resource_ref name="Differential Output Pins" enabled="0"/>
+        <resource_ref name="Digital Input Pins" enabled="1">
+            <io_usage name="HALL_SENSOR" label="Hall sensor output">
+                <uattr name="Configuration on initialization">-1</uattr>
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO5</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+                <uattr name="Pin/0016"></uattr>
+                <uattr name="Pin/0017"></uattr>
+                <uattr name="Pin/0018"></uattr>
+                <uattr name="Pin/0019"></uattr>
+                <uattr name="Pin/0020"></uattr>
+                <uattr name="Pin/0021"></uattr>
+                <uattr name="Pin/0022"></uattr>
+                <uattr name="Pin/0023"></uattr>
+                <uattr name="Pin/0024"></uattr>
+                <uattr name="Pin/0025"></uattr>
+                <uattr name="Pin/0026"></uattr>
+                <uattr name="Pin/0027"></uattr>
+                <uattr name="Pin/0028"></uattr>
+                <uattr name="Pin/0029"></uattr>
+                <uattr name="Pin/0030"></uattr>
+                <uattr name="Pin/0031"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="Digital Open-Drain Pins" enabled="0"/>
+        <resource_ref name="Digital Open-Source Pins" enabled="0"/>
+        <resource_ref name="Digital Output Pins" enabled="1">
+            <io_usage name="CAP_CTRL" label="Reservoir capacitor control">
+                <uattr name="Configuration on uninitialization">-1</uattr>
+                <uattr name="Output drive strength">0</uattr>
+                <uattr name="Output value on initialization">1</uattr>
+                <uattr name="Pin count">0</uattr>
+                <uattr name="Pin/0000">DIO0</uattr>
+                <uattr name="Pin/0001"></uattr>
+                <uattr name="Pin/0002"></uattr>
+                <uattr name="Pin/0003"></uattr>
+                <uattr name="Pin/0004"></uattr>
+                <uattr name="Pin/0005"></uattr>
+                <uattr name="Pin/0006"></uattr>
+                <uattr name="Pin/0007"></uattr>
+                <uattr name="Pin/0008"></uattr>
+                <uattr name="Pin/0009"></uattr>
+                <uattr name="Pin/0010"></uattr>
+                <uattr name="Pin/0011"></uattr>
+                <uattr name="Pin/0012"></uattr>
+                <uattr name="Pin/0013"></uattr>
+                <uattr name="Pin/0014"></uattr>
+                <uattr name="Pin/0015"></uattr>
+                <uattr name="Pin/0016"></uattr>
+                <uattr name="Pin/0017"></uattr>
+                <uattr name="Pin/0018"></uattr>
+                <uattr name="Pin/0019"></uattr>
+                <uattr name="Pin/0020"></uattr>
+                <uattr name="Pin/0021"></uattr>
+                <uattr name="Pin/0022"></uattr>
+                <uattr name="Pin/0023"></uattr>
+                <uattr name="Pin/0024"></uattr>
+                <uattr name="Pin/0025"></uattr>
+                <uattr name="Pin/0026"></uattr>
+                <uattr name="Pin/0027"></uattr>
+                <uattr name="Pin/0028"></uattr>
+                <uattr name="Pin/0029"></uattr>
+                <uattr name="Pin/0030"></uattr>
+                <uattr name="Pin/0031"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="Dynamic Power Control" enabled="0"/>
+        <resource_ref name="GPIO Event Trigger" enabled="1"/>
+        <resource_ref name="I2C Master" enabled="0">
+            <rattr name="SCL frequency">0</rattr>
+            <rattr name="SCL stretch timeout">1</rattr>
+            <io_usage>
+                <uattr name="SCL pin/0000"></uattr>
+                <uattr name="SDA pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="ISRC" enabled="0"/>
+        <resource_ref name="Math and Logic" enabled="0"/>
+        <resource_ref name="Multi-Buffered Output Data Exchange" enabled="0">
+            <rattr name="Buffer count">2</rattr>
+            <rattr name="Indicate overflow at buffer check">1</rattr>
+            <rattr name="Indicate overflow at buffer switch">0</rattr>
+            <rattr name="Prevent overflow at buffer switch">1</rattr>
+        </resource_ref>
+        <resource_ref name="Peripheral Sharing" enabled="0"/>
+        <resource_ref name="Pulse Counter" enabled="0"/>
+        <resource_ref name="RTC Multi-Event Capture" enabled="0"/>
+        <resource_ref name="RTC-Based Execution Scheduling" enabled="1"/>
+        <resource_ref name="Reference DAC" enabled="0"/>
+        <resource_ref name="Run-Time Logging" enabled="0"/>
+        <resource_ref name="SPI Chip Select" enabled="0"/>
+        <resource_ref name="SPI Data Transfer" enabled="0">
+            <rattr name="Bit rate">0</rattr>
+            <rattr name="MISO configuration when inactive">-1</rattr>
+            <rattr name="MOSI configuration on initialization">0</rattr>
+            <rattr name="MOSI configuration on uninitialization">0</rattr>
+            <rattr name="SCLK configuration on initialization">0</rattr>
+            <rattr name="SCLK configuration on uninitialization">0</rattr>
+            <io_usage>
+                <uattr name="MISO pin/0000"></uattr>
+                <uattr name="MOSI pin/0000"></uattr>
+                <uattr name="SCLK pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <resource_ref name="Signal Observation" enabled="0"/>
+        <resource_ref name="System CPU Alert" enabled="1"/>
+        <resource_ref name="System Event Trigger" enabled="0"/>
+        <resource_ref name="TDC" enabled="0"/>
+        <resource_ref name="Timer 0" enabled="0"/>
+        <resource_ref name="Timer 0 Event Trigger" enabled="0"/>
+        <resource_ref name="Timer 1" enabled="0"/>
+        <resource_ref name="Timer 1 Event Trigger" enabled="1"/>
+        <resource_ref name="Timer 2" enabled="0"/>
+        <resource_ref name="Timer 2 Event Trigger" enabled="0"/>
+        <resource_ref name="UART Emulator" enabled="0">
+            <rattr name="RX buffer size">64</rattr>
+            <rattr name="Required idle period before enabling RX">11</rattr>
+            <rattr name="TX buffer size">64</rattr>
+            <io_usage>
+                <uattr name="RX pin/0000"></uattr>
+                <uattr name="TX pin/0000"></uattr>
+            </io_usage>
+        </resource_ref>
+        <sccode name="event0" init_power_mode="0"><![CDATA[if (state.state == 1) { // host-requested wait
+
+  output.state = 0; // so far suspension
+
+  gpioGetInputValue(AUXIO_I_HALL_SENSOR; state.level);
+  if (state.level != state.hallInactive) { // active, we have a magnet
+      gpioClearOutput(AUXIO_O_CAP_CTRL); // disconnect cap
+      state.capConnected = 0;
+      state.state = 2;  // timed-wait-over state, it knows how to reconnect cap
+      output.state = 1; // notify that the tag experienced suspension
+      input.wait3 = 0;  // no further waiting...
+      input.wait2 = 0;
+      input.wait1 = 0;
+      input.wait0 = 0;
+      if (state.hallInactive==1) {
+          evhSetupGpioTrigger(0, AUXIO_I_HALL_SENSOR, 1, EVH_GPIO_TRIG_ON_MATCH);
+      } else {
+          evhSetupGpioTrigger(0, AUXIO_I_HALL_SENSOR, 0, EVH_GPIO_TRIG_ON_MATCH);
+      }
+  } else {
+    // from here on, just like a tag without a Hall sensor, but with cap disconnect for long sleeps
+
+    if (input.policy != 0) {
+        adcSelectIntInput(ADC_INPUT_VDDS);
+        adcEnableSync(ADC_REF_FIXED, ADC_SAMPLE_TIME_2P7_US, ADC_TRIGGER_MANUAL);
+        adcGenManualTrigger();
+        adcReadFifo(state.endVoltage); // voltage at the end of an activity burst, before we go to sleep
+        adcDisable();
+
+        output.endVoltage   = state.endVoltage;
+    }
+
+    // wait in seconds; we omit seconds * 2^8 for now
+
+    if (input.wait2 != 0) {
+        state.state = 2; // wait has ended
+        if (input.wait0 != 0) {
+            state.state = 12;
+        } // wait in 2^-16 sec
+        if (input.wait1 != 0) {
+            state.state = 11;
+        } // wait in 2^-8 sec
+        if (input.wait2 > 10) {
+          // reduce 10s from seconds waiting time and disconnect cap
+          input.wait2 = input.wait2 - 10;
+          gpioClearOutput(AUXIO_O_CAP_CTRL); // disconnect cap
+          state.capConnected = 0;
+        }
+
+        evhSetupTimer1Trigger(0, input.wait2, 12);
+    } else if (input.wait1 != 0) {
+        state.state = 2; // wait has ended
+        if (input.wait0 != 0) {
+            state.state = 12;
+        } // wait in 2^-16 sec
+        evhSetupTimer1Trigger(0, input.wait1, 4);
+    } else {
+        state.state = 2;
+        input.wait0 = input.wait0 >> 4;
+        if (input.wait0==0) {
+            input.wait0 = 1;
+        }
+        evhSetupTimer1Trigger(0, input.wait0, 0);
+    }
+  } // end of else block, no magnet
+} else if (state.state == 11) {
+    // wait in seconds * 2^-8
+
+    if (input.wait1 != 0) {
+        state.state = 2; // wait has ended
+        if (input.wait0 != 0) {
+            state.state = 12;
+        } // wait in 2^-16 sec
+        evhSetupTimer1Trigger(0, input.wait1, 4);
+    } else {
+        state.state = 2;
+        input.wait0 = input.wait0 >> 4;
+        if (input.wait0==0) {
+            input.wait0 = 1;
+        }
+        evhSetupTimer1Trigger(0, input.wait0, 0);
+    }
+} else if (state.state == 12) {
+    state.state = 2;
+    input.wait0 = input.wait0 >> 4;
+    if (input.wait0==0) {
+        input.wait0 = 1;
+    }
+    evhSetupTimer1Trigger(0, input.wait0, 0);
+} else if (state.state == 2) {  // woke up from wait, check compb
+  if (input.policy == 0) { // no voltage threshold, wait ended, return
+      if (state.capConnected == 1) {
+        //output.state = 0;  // exact wait; not needed, was set in state 1
+        state.state  = 1;  // go back to initial state
+        fwGenAlertInterrupt(); // tell MCU that we have trasitioned to state 2
+      } else {
+        gpioSetOutput(AUXIO_O_CAP_CTRL); // connect cap
+        state.capConnected = 1;
+        state.state = 2; // come back here to exit back to MCU
+        evhSetupTimer1Trigger(0, 10, 12); // wait the remaining 10s
+      }
+  } else {
+        adcSelectIntInput(ADC_INPUT_VDDS);
+        adcEnableSync(ADC_REF_FIXED, ADC_SAMPLE_TIME_2P7_US, ADC_TRIGGER_MANUAL);
+        adcGenManualTrigger();
+        adcReadFifo(state.level);
+        adcDisable();
+
+        if (state.level >= input.adcThreshold) {
+          if (state.capConnected == 1) {
+            //output.state = 0;  // exact wait; was set in state 1
+            state.state  = 1;  // go back to initial state
+            state.startVoltage = state.level;
+            output.startVoltage = state.level;
+            fwGenAlertInterrupt(); // tell MCU that we have trasitioned to state 2
+          } else {
+            gpioSetOutput(AUXIO_O_CAP_CTRL); // connect cap
+            state.capConnected = 1;
+            state.state = 2; // come back here to exit back to MCU
+            evhSetupTimer1Trigger(0, 10, 12); // wait the remaining 10s
+          }
+        } else {
+            gpioClearOutput(AUXIO_O_CAP_CTRL); // disconnect cap
+            state.capConnected = 0;
+            output.state = 1;  // low-voltage suspension
+            state.state = 4;   // ADC threshold enforcement state
+            if (input.policy == 2) {
+                adcSelectIntInput(ADC_INPUT_DCOUPL);  //1.25 to 1.28 volts
+                compbEnable(COMPB_REF_VDDS_DIV2);     //VDDS/2, so transitions occur at 2.5 to 2.56 volts
+                evhSetupCompbTrigger(0, 0, EVH_COMPB_TRIG_ON_MATCH);
+            } else { // input.policy == 1, only ADC waits
+                evhSetupTimer1Trigger(0, 60, 12); // wait 60 seconds
+            }
+        }
+    }
+} else if (state.state == 3) { // NOT NEEDED compb is now high enough, wait 60 seconds until ADC is high enough
+    compbDisable();
+    state.state = 4; // test again
+    evhSetupTimer1Trigger(0, 60, 12);
+} else if (state.state == 4) { // new Sept 19: combp is high, test for ADC threshold
+    if (input.policy == 2) {
+        compbDisable(); // new
+    }
+
+    adcSelectIntInput(ADC_INPUT_VDDS);
+    adcEnableSync(ADC_REF_FIXED, ADC_SAMPLE_TIME_2P7_US, ADC_TRIGGER_MANUAL);
+    adcGenManualTrigger();
+    adcReadFifo(state.level);
+    adcDisable();
+
+    if (state.level >= input.adcThreshold) {
+        state.state = 5;  // final wait
+        evhSetupTimer1Trigger(0, 60, 12); // wait 60 more seconds for voltage to really come up
+    } else {
+        // stay in the same state and wait another 60 seconds
+        evhSetupTimer1Trigger(0, 60, 12); // wait 60 seconds
+    }
+} else if (state.state == 5) { // reconnect and resharge cap
+   gpioSetOutput(AUXIO_O_CAP_CTRL); // connect cap
+   state.capConnected = 1;
+   state.state = 6;  // final wait
+   evhSetupTimer1Trigger(0, 10, 12); // wait 10 more seconds for the cap to recharge
+} else if (state.state == 6) { // this is similar to state 5 when there is no hall sensor and cap
+    adcSelectIntInput(ADC_INPUT_VDDS);
+    adcEnableSync(ADC_REF_FIXED, ADC_SAMPLE_TIME_2P7_US, ADC_TRIGGER_MANUAL);
+    adcGenManualTrigger();
+    adcReadFifo(state.startVoltage);
+    adcDisable();
+
+    output.startVoltage = state.startVoltage;
+
+    state.state  = 1;  // go back to initial state
+    fwGenAlertInterrupt(); // take MCU out of wait
+}]]></sccode>
+        <sccode name="event1" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="event2" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="event3" init_power_mode="0"><![CDATA[]]></sccode>
+        <sccode name="execute" init_power_mode="0"><![CDATA[//compbGetOutput(output.state);
+
+// Disable the ADC
+//adcDisable();
+
+//state.state = state.state+1;
+//output.state = state.state;
+//fwGenAlertInterrupt(); // tell MCU that we have trasitioned to state 2
+
+//fwScheduleTask(2);]]></sccode>
+        <sccode name="initialize" init_power_mode="0"><![CDATA[// connect the reservoir cap
+gpioSetOutput(AUXIO_O_CAP_CTRL);
+state.capConnected = 1;
+
+// remember the state of the Hall sensor; we assume that this is the inactive state
+gpioGetInputValue(AUXIO_I_HALL_SENSOR; state.hallInactive);
+
+state.state = 1;]]></sccode>
+        <sccode name="terminate" init_power_mode="0"><![CDATA[]]></sccode>
+        <event_trigger active_count="1">0,1,2,3</event_trigger>
+        <tt_iter></tt_iter>
+        <tt_struct></tt_struct>
+        <rtl_struct></rtl_struct>
+        <rtl_task_sel en="1" struct_log_list="output"/>
+    </task>
+</project>
