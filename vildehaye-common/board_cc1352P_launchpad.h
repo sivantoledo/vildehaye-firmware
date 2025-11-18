@@ -102,6 +102,11 @@
 #define RF_SWITCH_1       IOID_29
 #define RF_SWITCH_2       IOID_30
 
+// Sivan November 2025: off state added (without too much checking, used the initial state)
+#define RF_SWITCH_0_OFF        0
+#define RF_SWITCH_1_OFF        0
+#define RF_SWITCH_2_OFF        1
+
 //#if defined(LAUNCHXL_CC1352P_2) || defined(LAUNCHXL_CC1352P_4)
 //  1: 2.4     is always no PA (DIO28) and 915/868 is either with PA (DIO29) or no PA (DIO30).
 // -2: 868/915 is always no PA (DIO30) and 2.4     is either with PA (DIO29) or no PA (DIO28).
