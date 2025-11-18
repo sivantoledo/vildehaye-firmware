@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>vildehaye-cc13x2-lvs-7x7</name>
+	<comment></comment>
+	<projects>
+		<project>vildehaye-common-cc13x0</project>
+		<project>vildehaye-common-cc13x2</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ti.ccstudio.core.ccsNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>vildehaye-common</name>
+			<type>2</type>
+			<locationURI>copy_PARENT/vildehaye-common</locationURI>
+		</link>
+		<link>
+			<name>vildehaye-sc-lvs-cc13x2-7x7</name>
+			<type>2</type>
+			<locationURI>copy_PARENT/vildehaye-sc-lvs-cc13x2-7x7</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-3-PROJECT_LOC%7D/github/vildehaye-firmware</value>
+		</variable>
+	</variableList>
+</projectDescription>
