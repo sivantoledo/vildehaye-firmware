@@ -1,5 +1,5 @@
-//#ifndef CONFIG_H
-//#define CONFIG_H
+#ifndef CONFIG_H
+#define CONFIG_H
 
 /********************************************************************/
 /* board definitions and mappings                                 */
@@ -99,4 +99,4 @@
 #define SCUART_TASK_PRIORITY           8
 
 
-//#endif // config.h
+#endif // config.h
